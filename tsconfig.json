@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "esnext",                    // Target ECMAScript version
+      "module": "commonjs",               // Module system
+      "moduleResolution": "node",         // Module resolution strategy
+      "esModuleInterop": true,             // Allow default imports from modules with no default export
+      "baseUrl": ".",
+      "strict": false,
+      "paths": {
+        "@c/*": ["src/cell/*"],
+        "components/*": ["src/components/*"],
+        "assets/*": ["src/assets/*"],
+      }
+    },
+  
+    "exclude": [
+      "./node_modules",
+    ],
+  
+    "include": [
+      "./@types/*.d.ts",
+      "./src/**/*.ts",
+      "./src/**/*.vue",
+    ],
+  }
