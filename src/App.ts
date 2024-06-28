@@ -1,33 +1,31 @@
 
-
-
-
-export default {
-    data: () => ({
-        bla: new Foo()
-    })
-}
+import {component, prop, field } from '@/dsl'
+import {Input} from '@/shared'
+import { useAuth } from '@/app/providers/store'
+import { mapWritableState } from 'pinia'
 
 
 @component
 class Foo {
+    components = {
+        Input
+    }
+    computed = {
+        ...mapWritableState(useAuth, ['token'])
+    }
     
 }
 
+export default Foo.component
 
 
 
-function component ( Target, ctx ):any {
-    console.log('CALLED')
 
-    return class extends Target {
-        constructor(){
-            super()
-        }
-        name = 'Tet12'
-    }   
-  
-}
+
+
+
+
+
 
 
 

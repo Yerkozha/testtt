@@ -21,7 +21,6 @@ module.exports = function () {
             filename            : '[name][contenthash].js',
             assetModuleFilename : 'images/[hash][ext][query]',
             publicPath          : '/'
-
         },
 
         resolve: {
@@ -57,6 +56,13 @@ module.exports = function () {
                         'css-loader',
                         {
                             loader: 'sass-loader',
+                            options: {
+                                additionalData: `
+                                    @import "styles/_variables.scss";
+                                    @import "styles/_bem-mixin.scss";
+                                    @import "styles/_medias.scss";
+                                `
+                            }
                         },
                         {
                             loader: "postcss-loader",
@@ -73,10 +79,12 @@ module.exports = function () {
                 },
                 {
                     test: /\.svg$/,
+                    type: 'asset/inline',
                     loader: 'svg-sprite-loader',
                     options: {
                         extract: true,
-                        spriteFilename: './icons.svg' // this is the destination of your sprite sheet
+                        spriteFilename: './icons.svg', // this is the destination of your sprite sheet
+                        publicPath: '/'
                     }
                 }
             ]

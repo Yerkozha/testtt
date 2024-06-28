@@ -8,7 +8,6 @@ abstract class Base {
     _state: 'normal' | 'error' = 'normal';
 
     cssType: 'big' | 'normal' = 'normal';
-
     cssSize = {
         island: {
             bigSinle: "76px",

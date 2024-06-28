@@ -4,22 +4,20 @@
 // var vm = new Vue({
 //     el: '#app',
 //     render: h => h(App)
+//     render: App.render
 // })
 
 
 import { createApp } from 'vue'
-import './scss/main.scss'
 
 import App from './App.vue'
+import pinia from '@/app/providers/store';
+import router from '@/app/providers/router';
+import '@/scss/main.scss'
 
 console.log(App);
-createApp(App).mount('#app')
-// createApp({
-//     data: function(...args) {
-//         console.log(args)
-//         return {
-//             bla: '111'
-//         }
-//     },
-//     render: App.render
-// }).mount('#app')
+const app = createApp(App)
+
+app.use(pinia);
+app.use(router);
+app.mount('#app');

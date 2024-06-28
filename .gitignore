@@ -1,4 +1,7 @@
 /src/algorithms
+/src/cell
+/src/dsl/architicture.ts
+/src/dsl/playground.ts
 /src/engines
 /src/vue
 /node_modules

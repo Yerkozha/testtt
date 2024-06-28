@@ -7,6 +7,18 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
+    <script>
+        Symbol.metadata ??= Symbol.for("Symbol.metadata");
+        const _metadata = Object.create(null)
+        if (typeof Symbol === 'function' && Symbol.metadata) {
+            Object.defineProperty(globalThis, Symbol.metadata, {
+                enumerable: true,
+                configurable: true,
+                writable: true,
+                value: _metadata
+            })
+        }
+    </script>
     <div id="app"></div>
 </body>
 </html>

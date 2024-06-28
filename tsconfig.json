@@ -1,15 +1,16 @@
 {
     "compilerOptions": {
-      "target": "esnext",                    // Target ECMAScript version
+      "target": "ES2022",
       "module": "commonjs",               // Module system
       "moduleResolution": "node",         // Module resolution strategy
       "esModuleInterop": true,             // Allow default imports from modules with no default export
       "baseUrl": ".",
       "strict": false,
       "paths": {
-        "@c/*": ["src/cell/*"],
+        "@/*": ["src/*"],
         "components/*": ["src/components/*"],
         "assets/*": ["src/assets/*"],
+        "styles/*": ["src/scss/*"],
       }
     },
   
